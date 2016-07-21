@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
+
 	<properties resource="db.properties" />
 
+	<typeAliases>
+		<package name="me.hzw.mybatis_crud.domain"/>
+	</typeAliases>
+	
 	<environments default="development">
 		<environment id="development">
 			<transactionManager type="JDBC" />
@@ -15,9 +20,11 @@
 		</environment>
 	</environments>
 
+
+
 	<mappers>
 		<mapper resource="me/hzw/mybatis_crud/mapping/userMapper.xml" />
-		<mapper class="me.hzw.mybatis_crud.Imapper.UserMapperI"/>
+		<mapper class="me.hzw.mybatis_crud.Imapper.UserMapperI" />
 	</mappers>
 
 </configuration>

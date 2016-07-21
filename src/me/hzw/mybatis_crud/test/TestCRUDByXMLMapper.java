@@ -32,6 +32,17 @@ public class TestCRUDByXMLMapper {
 	}
 	
 	@Test
+	public void addUserNew(){
+		SqlSession session = MybatisUtil.getSqlSession(true);
+		String statement = "me.hzw.mybatis_crud.mapping.userMapper.addUserNew";
+		User user = new User();
+		user.setAge(14);
+		user.setName("lingling");
+		int state = session.insert(statement, user);
+		System.out.println("addUser:"+state);
+	}
+	
+	@Test
 	public void delUser(){
 		SqlSession session = MybatisUtil.getSqlSession(true);
 		String statement = "me.hzw.mybatis_crud.mapping.userMapper.delUser";

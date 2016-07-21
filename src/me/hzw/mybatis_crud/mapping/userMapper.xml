@@ -11,6 +11,11 @@
 		value(#{name},#{age})
 	</insert>
 
+	<insert id="addUserNew" parameterType="User">
+		insert into users(name,age)
+		value(#{name},#{age})
+	</insert>
+
 	<delete id="delUser" parameterType="int">
 		delete from users where
 		id=#{id}
